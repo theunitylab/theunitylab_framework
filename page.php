@@ -7,7 +7,7 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package LCCC Framework
+ * @package Unity Lab Framework
  */
 
 get_header(); ?>

@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area.
  *
- * @package LCCC Framework
+ * @package Unity Lab Framework
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

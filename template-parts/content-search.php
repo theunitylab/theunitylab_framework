@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package LCCC Framework
+ * @package Unity Lab Framework
  */
 ?>
 
@@ -14,7 +14,7 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php lccc_framework_posted_on(); ?>
+			<?php unity-lab_framework_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -24,6 +24,6 @@
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
-		<?php lccc_framework_entry_footer(); ?>
+		<?php unity-lab_framework_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

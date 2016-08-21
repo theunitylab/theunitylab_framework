@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package LCCC Framework
+ * @package Unity Lab Framework
  */
 
 get_header(); ?>
