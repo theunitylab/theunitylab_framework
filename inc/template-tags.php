@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package LCCC Framework
+ * @package Unity Lab Framework
  */
 
 if ( ! function_exists( 'the_posts_navigation' ) ) :
@@ -20,15 +20,15 @@ function the_posts_navigation() {
 	}
 	?>
 	<nav class="navigation posts-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'lccc-framework' ); ?></h2>
+		<h2 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'unity_lab-framework' ); ?></h2>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( esc_html__( 'Older posts', 'lccc-framework' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( esc_html__( 'Older posts', 'unity_lab-framework' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( esc_html__( 'Newer posts', 'lccc-framework' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( esc_html__( 'Newer posts', 'unity_lab-framework' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -53,7 +53,7 @@ function the_post_navigation() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'lccc-framework' ); ?></h2>
+		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'unity_lab-framework' ); ?></h2>
 		<div class="nav-links">
 			<?php
 				previous_post_link( '<div class="nav-previous">%link</div>', '%title' );
@@ -65,11 +65,11 @@ function the_post_navigation() {
 }
 endif;
 
-if ( ! function_exists( 'lccc_framework_posted_on' ) ) :
+if ( ! function_exists( 'unity_lab_framework_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function lccc_framework_posted_on() {
+function unity_lab_framework_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -83,12 +83,12 @@ function lccc_framework_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'lccc-framework' ),
+		esc_html_x( 'Posted on %s', 'post date', 'unity_lab-framework' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'lccc-framework' ),
+		esc_html_x( 'by %s', 'post author', 'unity_lab-framework' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -97,33 +97,33 @@ function lccc_framework_posted_on() {
 }
 endif;
 
-if ( ! function_exists( 'lccc_framework_entry_footer' ) ) :
+if ( ! function_exists( 'unity_lab_framework_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
-function lccc_framework_entry_footer() {
+function unity_lab_framework_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', 'lccc-framework' ) );
+		$categories_list = get_the_category_list( esc_html__( ', ', 'unity_lab-framework' ) );
 		if ( $categories_list && lccc_framework_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'lccc-framework' ) . '</span>', $categories_list );
+			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'unity_lab-framework' ) . '</span>', $categories_list );
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'lccc-framework' ) );
+		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'unity_lab-framework' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'lccc-framework' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'unity_lab-framework' ) . '</span>', $tags_list );
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', 'lccc-framework' ), esc_html__( '1 Comment', 'lccc-framework' ), esc_html__( '% Comments', 'lccc-framework' ) );
+		comments_popup_link( esc_html__( 'Leave a comment', 'unity_lab-framework' ), esc_html__( '1 Comment', 'unity_lab-framework' ), esc_html__( '% Comments', 'unity_lab-framework' ) );
 		echo '</span>';
 	}
 
-	edit_post_link( esc_html__( 'Edit', 'lccc-framework' ), '<span class="edit-link">', '</span>' );
+	edit_post_link( esc_html__( 'Edit', 'unity_lab-framework' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
@@ -140,45 +140,45 @@ if ( ! function_exists( 'the_archive_title' ) ) :
  */
 function the_archive_title( $before = '', $after = '' ) {
 	if ( is_category() ) {
-		$title = sprintf( esc_html__( 'Category: %s', 'lccc-framework' ), single_cat_title( '', false ) );
+		$title = sprintf( esc_html__( 'Category: %s', 'unity_lab-framework' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
-		$title = sprintf( esc_html__( 'Tag: %s', 'lccc-framework' ), single_tag_title( '', false ) );
+		$title = sprintf( esc_html__( 'Tag: %s', 'unity_lab-framework' ), single_tag_title( '', false ) );
 	} elseif ( is_author() ) {
-		$title = sprintf( esc_html__( 'Author: %s', 'lccc-framework' ), '<span class="vcard">' . get_the_author() . '</span>' );
+		$title = sprintf( esc_html__( 'Author: %s', 'unity_lab-framework' ), '<span class="vcard">' . get_the_author() . '</span>' );
 	} elseif ( is_year() ) {
-		$title = sprintf( esc_html__( 'Year: %s', 'lccc-framework' ), get_the_date( esc_html_x( 'Y', 'yearly archives date format', 'lccc-framework' ) ) );
+		$title = sprintf( esc_html__( 'Year: %s', 'unity_lab-framework' ), get_the_date( esc_html_x( 'Y', 'yearly archives date format', 'unity_lab-framework' ) ) );
 	} elseif ( is_month() ) {
-		$title = sprintf( esc_html__( 'Month: %s', 'lccc-framework' ), get_the_date( esc_html_x( 'F Y', 'monthly archives date format', 'lccc-framework' ) ) );
+		$title = sprintf( esc_html__( 'Month: %s', 'unity_lab-framework' ), get_the_date( esc_html_x( 'F Y', 'monthly archives date format', 'unity_lab-framework' ) ) );
 	} elseif ( is_day() ) {
-		$title = sprintf( esc_html__( 'Day: %s', 'lccc-framework' ), get_the_date( esc_html_x( 'F j, Y', 'daily archives date format', 'lccc-framework' ) ) );
+		$title = sprintf( esc_html__( 'Day: %s', 'unity_lab-framework' ), get_the_date( esc_html_x( 'F j, Y', 'daily archives date format', 'unity_lab-framework' ) ) );
 	} elseif ( is_tax( 'post_format' ) ) {
 		if ( is_tax( 'post_format', 'post-format-aside' ) ) {
-			$title = esc_html_x( 'Asides', 'post format archive title', 'lccc-framework' );
+			$title = esc_html_x( 'Asides', 'post format archive title', 'unity_lab-framework' );
 		} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
-			$title = esc_html_x( 'Galleries', 'post format archive title', 'lccc-framework' );
+			$title = esc_html_x( 'Galleries', 'post format archive title', 'unity_lab-framework' );
 		} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
-			$title = esc_html_x( 'Images', 'post format archive title', 'lccc-framework' );
+			$title = esc_html_x( 'Images', 'post format archive title', 'unity_lab-framework' );
 		} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
-			$title = esc_html_x( 'Videos', 'post format archive title', 'lccc-framework' );
+			$title = esc_html_x( 'Videos', 'post format archive title', 'unity_lab-framework' );
 		} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
-			$title = esc_html_x( 'Quotes', 'post format archive title', 'lccc-framework' );
+			$title = esc_html_x( 'Quotes', 'post format archive title', 'unity_lab-framework' );
 		} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
-			$title = esc_html_x( 'Links', 'post format archive title', 'lccc-framework' );
+			$title = esc_html_x( 'Links', 'post format archive title', 'unity_lab-framework' );
 		} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
-			$title = esc_html_x( 'Statuses', 'post format archive title', 'lccc-framework' );
+			$title = esc_html_x( 'Statuses', 'post format archive title', 'unity_lab-framework' );
 		} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
-			$title = esc_html_x( 'Audio', 'post format archive title', 'lccc-framework' );
+			$title = esc_html_x( 'Audio', 'post format archive title', 'unity_lab-framework' );
 		} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
-			$title = esc_html_x( 'Chats', 'post format archive title', 'lccc-framework' );
+			$title = esc_html_x( 'Chats', 'post format archive title', 'unity_lab-framework' );
 		}
 	} elseif ( is_post_type_archive() ) {
-		$title = sprintf( esc_html__( 'Archives: %s', 'lccc-framework' ), post_type_archive_title( '', false ) );
+		$title = sprintf( esc_html__( 'Archives: %s', 'unity_lab-framework' ), post_type_archive_title( '', false ) );
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );
 		/* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
-		$title = sprintf( esc_html__( '%1$s: %2$s', 'lccc-framework' ), $tax->labels->singular_name, single_term_title( '', false ) );
+		$title = sprintf( esc_html__( '%1$s: %2$s', 'unity_lab-framework' ), $tax->labels->singular_name, single_term_title( '', false ) );
 	} else {
-		$title = esc_html__( 'Archives', 'lccc-framework' );
+		$title = esc_html__( 'Archives', 'unity_lab-framework' );
 	}
 
 	/**

@@ -12,9 +12,9 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'unity-lab-framework' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'unity-lab-framework' ), 'WordPress' ); ?></a>
+			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'unity_lab-framework' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'unity_lab-framework' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'unity-lab-framework' ), 'unity-lab-framework', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
+			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'unity_lab-framework' ), 'unity_lab-framework', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
